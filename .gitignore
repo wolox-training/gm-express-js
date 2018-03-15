@@ -42,7 +42,7 @@ node_modules
 # Code coverage
 ./coverage
 
-# dotenv
+# dotenv to never push secret keys
 .env
 
 # VS Code
