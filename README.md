@@ -9,7 +9,7 @@ Get the latest version of node from the [official website](https://nodejs.org/) 
 Nvm approach is preferred.
 
 #### Getting dependencies
-Run ```npm install``` or ```yarn``` from rootpath of project.
+Run ```npm install``` or ```yarn``` from rootpath of the project.
 
 #### Kickoff - Removing sample project
 Run ```node ./scripts/kick-off.js``` from project's rootpath to remove the existing sample project and start developing your app.
