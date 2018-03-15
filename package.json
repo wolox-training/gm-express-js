@@ -1,5 +1,5 @@
 {
-  "name": "express-js-bootstrap",
+  "name": "gm-express-js",
   "version": "0.1.0",
   "description": "Kickoff for ExpressJS applications",
   "engines": {
@@ -29,14 +29,14 @@
   ],
   "main": "app.js",
   "author": "Wolox",
-  "homepage": "https://github.com/Wolox/express-js-bootstrap",
+  "homepage": "https://github.com/Wolox/gm-express-js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Wolox/express-js-bootstrap.git"
+    "url": "https://github.com/Wolox/gm-express-js.git"
   },
   "bugs": {
-    "url": "https://github.com/Wolox/express-js-bootstrap/issues",
+    "url": "https://github.com/Wolox/gm-express-js/issues",
     "email": "tls@wolox.com.ar"
   },
   "dependencies": {

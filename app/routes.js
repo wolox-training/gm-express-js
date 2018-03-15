@@ -1,2 +1,1 @@
-exports.init = app => {
-};
+exports.init = app => {};

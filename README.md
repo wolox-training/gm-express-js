@@ -1,4 +1,4 @@
-# ExpressJS Bootstrap [![Build Status](https://api.travis-ci.org/Wolox/express-js-bootstrap.png)](https://travis-ci.org/Wolox/express-js-bootstrap)
+# GM ExpressJS Training [![Build Status](https://travis-ci.org/wolox-training/gm-express-js.png)](https://travis-ci.org/wolox-training/gm-express-js/)
 
 Kickoff for [ExpressJS](expressjs.com) applications.
 
@@ -89,7 +89,7 @@ This project is maintained by [Michel Agopian](https://github.com/mishuagopian) 
 
 ## License
 
-**express-js-bootstrap** is available under the MIT [license](LICENSE.md).
+**gm-express-js** is available under the MIT [license](LICENSE.md).
 
     Copyright (c) 2017 Wolox
 

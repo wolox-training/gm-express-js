@@ -1,2 +1,1 @@
-exports.define = db => {
-};
+exports.define = db => {};
