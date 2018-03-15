@@ -9,3 +9,10 @@ exports.defaultError = message => {
     message
   };
 };
+
+exports.savingError = message => {
+  return {
+    statusCode: 503,
+    message
+  };
+};

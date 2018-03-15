@@ -13,10 +13,13 @@ module.exports = (sequelize, DataTypes) => {
       },
       password: { type: DataTypes.STRING, allowNull: false }
     },
-    {}
+    {
+      classMethods: {
+        associate(models) {
+          // associations can be defined here
+        }
+      }
+    }
   );
-  user.associate = function(models) {
-    // associations can be defined here
-  };
   return user;
 };
