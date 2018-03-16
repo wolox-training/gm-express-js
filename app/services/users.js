@@ -1,8 +1,10 @@
 const User = require('../models').user,
+  logger = require('../logger'),
   errors = require('../errors');
 
 exports.create = user => {
   return User.create(user).catch(err => {
+    logger.error(err);
     throw errors.savingError(err);
   });
 };
