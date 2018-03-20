@@ -34,7 +34,5 @@ exports.create = (req, res, next) => {
         res.end();
       });
     })
-    .catch(err => {
-      next(errors.defaultError(err));
-    });
+    .catch(next);
 };
