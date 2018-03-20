@@ -5,7 +5,7 @@ const chai = require('chai'),
 
 describe('users', () => {
   describe('/users POST', () => {
-    it('should be successful', done => {
+    it('expect to be successful', done => {
       chai
         .request(server)
         .post('/users')
