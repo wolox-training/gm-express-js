@@ -10,16 +10,19 @@ exports.create = user => {
 };
 
 exports.getOne = user => {
-  return User.findOne({ where: user }).catch(err => {
+  return User.findOne({
+    where: user
+  }).catch(err => {
     throw errors.databaseError(err.detail);
   });
 };
 
-exports.getAll = (props, limit = 20, offset = 0) => {
+exports.getAll = (page = 1, limit = 20) => {
   return User.findAll({
-    where: props,
-    offset,
-    limit
+    limit,
+    order: [['id', 'ASC']],
+    offset: limit * (page - 1),
+    attributes: { exclude: ['password'] }
   }).catch(err => {
     throw errors.databaseError(err.detail);
   });

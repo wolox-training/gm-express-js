@@ -64,3 +64,13 @@ exports.login = (req, res, next) => {
     }
   });
 };
+
+exports.getAll = (req, res, next) => {
+  userService
+    .getAll(req.query.page)
+    .then(users => {
+      res.status(200);
+      res.send({ users });
+    })
+    .catch(next);
+};

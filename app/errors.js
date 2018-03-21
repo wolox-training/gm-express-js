@@ -28,3 +28,8 @@ exports.invalidUser = {
   statusCode: '404',
   message: 'Invalid user, email and/or password invalid'
 };
+
+exports.unauthorized = {
+  statusCode: '401',
+  message: 'Unauthorized user'
+};

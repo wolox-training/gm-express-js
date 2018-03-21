@@ -1,23 +1,56 @@
 const chai = require('chai'),
   dictum = require('dictum.js'),
   expect = chai.expect,
+  sessionManager = require('./../app/services/sessionManager'),
   User = require('../app/models').user,
   server = require('./../app');
 
+const successfulLogin = cb => {
+  return chai
+    .request(server)
+    .post('/users/sessions')
+    .send({ email: 'email1@wolox.com.ar', password: '12345678' });
+};
+
 describe('users', () => {
-  describe('/users/sessions POST', () => {
-    it('expect to be successful', done => {
-      chai
-        .request(server)
-        .post('/users/sessions')
-        .send({ email: 'email1@wolox.com.ar', password: '12345678' })
-        .then(res => {
-          expect(res).to.have.status(200);
-          expect(res).to.be.json;
-          expect(res.body).to.have.property('token');
-          dictum.chai(res);
+  describe('/users GET', () => {
+    it('should return all users with pagination', done => {
+      successfulLogin()
+        .then(loginRes => {
+          return chai
+            .request(server)
+            .get('/users?page=1')
+            .set(sessionManager.HEADER_NAME, loginRes.headers[sessionManager.HEADER_NAME])
+            .then(res => {
+              expect(res).to.have.status(200);
+              expect(res).to.be.json;
+              expect(res.body.users).to.be.a('array');
+              expect(res.body.users[0]).to.have.property('id');
+              expect(res.body.users[0]).to.have.property('email');
+              expect(res.body.users[0]).to.have.property('firstName');
+              expect(res.body.users[0]).to.have.property('lastName');
+              dictum.chai(res);
+            });
         })
         .then(() => done());
+    });
+  });
+
+  describe('/users/sessions POST', () => {
+    it('expect to be successful', done => {
+      successfulLogin().then(loginRes => {
+        return chai
+          .request(server)
+          .post('/users/sessions')
+          .send({ email: 'email1@wolox.com.ar', password: '12345678' })
+          .then(res => {
+            expect(res).to.have.status(200);
+            expect(res).to.be.json;
+            expect(res.body).to.have.property('token');
+            dictum.chai(res);
+          })
+          .then(() => done());
+      });
     });
 
     it('expect to return error for invalid email or/and password', done => {
