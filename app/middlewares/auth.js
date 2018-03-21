@@ -20,3 +20,22 @@ exports.secure = (req, res, next) => {
     next(errors.unauthorized);
   }
 };
+
+exports.secureAdmin = (req, res, next) => {
+  const auth = req.headers[sessionManager.HEADER_NAME];
+
+  if (auth) {
+    const user = sessionManager.decode(auth);
+
+    User.findOne({ where: user }).then(u => {
+      if (u && u.role === 'admin') {
+        req.user = u;
+        next();
+      } else {
+        next(errors.unauthorized);
+      }
+    });
+  } else {
+    next(errors.unauthorized);
+  }
+};
