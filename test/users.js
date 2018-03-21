@@ -1,7 +1,8 @@
 const chai = require('chai'),
   dictum = require('dictum.js'),
-  server = require('./../app'),
-  expect = chai.expect;
+  expect = chai.expect,
+  User = require('../app/models').user,
+  server = require('./../app');
 
 describe('users', () => {
   describe('/users POST', () => {
@@ -17,12 +18,16 @@ describe('users', () => {
         })
         .then(res => {
           expect(res).to.have.status(200);
-          dictum.chai(res);
+          return User.findOne({ where: { email: 'email@wolox.com.ar' } }).then(u => {
+            expect(u.firstName).to.equal('firstName');
+            expect(u.lastName).to.equal('lastName');
+            dictum.chai(res);
+          });
         })
         .then(() => done());
     });
 
-    it('should fail because password is in invalid', done => {
+    it('should fail because password is invalid', done => {
       chai
         .request(server)
         .post('/users')
