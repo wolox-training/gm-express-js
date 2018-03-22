@@ -9,3 +9,22 @@ exports.defaultError = message => {
     message
   };
 };
+
+exports.savingError = message => {
+  return {
+    statusCode: 503,
+    message
+  };
+};
+
+exports.badRequest = message => {
+  return {
+    statusCode: 400,
+    message
+  };
+};
+
+exports.invalidUser = {
+  statusCode: '404',
+  message: 'Invalid user, email and/or password invalid'
+};
