@@ -16,3 +16,15 @@ exports.savingError = message => {
     message
   };
 };
+
+exports.badRequest = message => {
+  return {
+    statusCode: 400,
+    message
+  };
+};
+
+exports.invalidUser = {
+  statusCode: '404',
+  message: 'Invalid user, email and/or password invalid'
+};
