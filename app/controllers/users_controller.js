@@ -2,6 +2,7 @@
 
 const bcrypt = require('bcryptjs'),
   validationResult = require('express-validator/check').validationResult,
+  sessionManager = require('./../services/sessionManager'),
   userService = require('../services/users'),
   errors = require('../errors');
 
@@ -35,4 +36,31 @@ exports.create = (req, res, next) => {
       });
     })
     .catch(next);
+};
+
+exports.login = (req, res, next) => {
+  const user = req.body
+    ? {
+        email: req.body.email,
+        password: req.body.password
+      }
+    : {};
+
+  userService.getByEmail(user.email).then(u => {
+    if (u) {
+      bcrypt.compare(user.password, u.password).then(isValid => {
+        if (isValid) {
+          const auth = sessionManager.encode({ username: u.username });
+
+          res.status(200);
+          res.set(sessionManager.HEADER_NAME, auth);
+          res.send({ token: auth });
+        } else {
+          next(errors.invalidUser);
+        }
+      });
+    } else {
+      next(errors.invalidUser);
+    }
+  });
 };
