@@ -25,8 +25,8 @@ exports.getAll = (props, limit = 20, offset = 0) => {
   });
 };
 
-exports.getByUsername = username => {
-  return exports.getOne({ username });
+exports.getByEmail = email => {
+  return exports.getOne({ email });
 };
 
 exports.update = (props, user) => {

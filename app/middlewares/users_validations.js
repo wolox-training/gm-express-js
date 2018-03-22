@@ -10,3 +10,9 @@ exports.validateUser = [
   check('firstName', 'fisrtName not present').isLength({ min: 1 }),
   check('lastName', 'lastName not present').isLength({ min: 1 })
 ];
+
+exports.validateEmail = [
+  check('email', 'email must be an email valid and from wolox')
+    .isEmail()
+    .matches(/[\w\.]+@wolox.com.ar/)
+];

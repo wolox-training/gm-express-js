@@ -23,3 +23,8 @@ exports.badRequest = message => {
     message
   };
 };
+
+exports.invalidUser = {
+  statusCode: '404',
+  message: 'Invalid user, email and/or password invalid'
+};
