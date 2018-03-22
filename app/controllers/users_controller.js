@@ -1,9 +1,9 @@
 'use strict';
 
 const bcrypt = require('bcryptjs'),
-  userService = require('../services/users'),
   validationResult = require('express-validator/check').validationResult,
   sessionManager = require('./../services/sessionManager'),
+  userService = require('../services/users'),
   errors = require('../errors');
 
 exports.create = (req, res, next) => {
@@ -29,20 +29,13 @@ exports.create = (req, res, next) => {
     .then(hash => {
       user.password = hash;
 
-      userService
-        .create(user)
-        .then(u => {
-          res.status(200);
-          res.send({ completeName: `${u.firstName} ${u.lastName}` });
-          res.end();
-        })
-        .catch(err => {
-          next(err);
-        });
+      return userService.create(user).then(u => {
+        res.status(200);
+        res.send({ completeName: `${u.firstName} ${u.lastName}` });
+        res.end();
+      });
     })
-    .catch(err => {
-      next(errors.defaultError(err));
-    });
+    .catch(next);
 };
 
 exports.login = (req, res, next) => {
