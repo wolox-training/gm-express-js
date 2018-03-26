@@ -3,9 +3,16 @@ const request = require('request'),
 
 exports.getAll = () => {
   return new Promise((resolve, reject) => {
-    request.get('https://jsonplaceholder.typicode.com/albums', (error, response, body) => {
-      if (error) reject(error);
-      resolve(JSON.parse(body));
-    });
+    request(
+      {
+        method: 'GET',
+        url: 'https://jsonplaceholder.typicode.com/albums',
+        json: true
+      },
+      (error, response, body) => {
+        if (error) reject(error);
+        resolve(body);
+      }
+    );
   });
 };
