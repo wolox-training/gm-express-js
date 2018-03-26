@@ -24,11 +24,11 @@ describe('users', () => {
             .then(res => {
               expect(res).to.have.status(200);
               expect(res).to.be.json;
-              expect(res.body.users).to.be.a('array');
-              expect(res.body.users[0]).to.have.property('id');
-              expect(res.body.users[0]).to.have.property('email');
-              expect(res.body.users[0]).to.have.property('firstName');
-              expect(res.body.users[0]).to.have.property('lastName');
+              expect(res.body).to.be.a('array');
+              expect(res.body[0]).to.have.property('id');
+              expect(res.body[0]).to.have.property('email');
+              expect(res.body[0]).to.have.property('firstName');
+              expect(res.body[0]).to.have.property('lastName');
               dictum.chai(res);
             });
         })
