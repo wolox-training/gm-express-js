@@ -70,7 +70,7 @@ exports.getAll = (req, res, next) => {
     .getAll(req.query.page)
     .then(users => {
       res.status(200);
-      res.send({ users });
+      res.send(users);
     })
     .catch(next);
 };
