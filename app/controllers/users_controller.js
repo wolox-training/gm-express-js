@@ -86,34 +86,29 @@ exports.createAdmin = (req, res, next) => {
     return next(errors.badRequest(validationErrors.mapped()));
   }
 
-  const user = req.body
-    ? {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        password: req.body.password,
-        email: req.body.email,
-        role: 'admin'
-      }
-    : {};
+  const user = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    password: req.body.password,
+    email: req.body.email,
+    role: 'admin'
+  };
 
   return userService
     .getByEmail(user.email)
     .then(u => {
       if (u) {
-        return userService.update({ role: 'admin' }, u).then(admin => {
-          res.status(200);
-          res.send({ message: `${admin.firstName} ${admin.lastName} is admin` });
-          res.end();
-        });
+        return userService.update({ role: 'admin' }, u);
       } else if (user.firstName && user.lastName && user.password) {
-        return createUser(user).then(newUser => {
-          res.status(200);
-          res.send({ message: `${newUser.firstName} ${newUser.lastName} is admin and new user` });
-          res.end();
-        });
+        return createUser(user);
       } else {
         return next(errors.badRequest('Lack of at least one params: firstName, lastName or password'));
       }
+    })
+    .then(admin => {
+      res.status(200);
+      res.send({ message: `${admin.firstName} ${admin.lastName} is admin` });
+      res.end();
     })
     .catch(next);
 };
