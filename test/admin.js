@@ -73,7 +73,7 @@ describe('admin', () => {
           .request(server)
           .post('/admin/users')
           .set(sessionManager.HEADER_NAME, loginRes.headers[sessionManager.HEADER_NAME])
-          .send({ email: 'email3@wolox.com.ar' })
+          .send({ email: 'email3@wolox.com.ar', firstName: 'wegwe' })
           .catch(err => {
             expect(err).to.have.status(400);
           })

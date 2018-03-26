@@ -102,7 +102,7 @@ exports.createAdmin = (req, res, next) => {
       } else if (user.firstName && user.lastName && user.password) {
         return createUser(user);
       } else {
-        return next(errors.badRequest('Lack of at least one params: firstName, lastName or password'));
+        throw errors.badRequest('Lack of at least one params: firstName, lastName or password');
       }
     })
     .then(admin => {
