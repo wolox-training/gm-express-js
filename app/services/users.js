@@ -5,7 +5,7 @@ const User = require('../models').user,
 exports.create = user => {
   return User.create(user).catch(err => {
     logger.error(err);
-    throw errors.savingError(err);
+    throw errors.savingError(err.errors.map(e => e.message));
   });
 };
 
@@ -24,6 +24,7 @@ exports.getAll = (page = 1, limit = 20) => {
     offset: limit * (page - 1),
     attributes: { exclude: ['password'] }
   }).catch(err => {
+    logger.error(err);
     throw errors.databaseError(err.detail);
   });
 };
@@ -33,7 +34,8 @@ exports.getByEmail = email => {
 };
 
 exports.update = (props, user) => {
-  return User.update(props).catch(err => {
+  return user.update(props).catch(err => {
+    logger.error(err);
     throw errors.savingError(err.errors);
   });
 };
