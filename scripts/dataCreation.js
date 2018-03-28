@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs'),
-  User = require('../app/models').user;
+  User = require('../app/models').user,
+  Album = require('../app/models').album;
 
 exports.execute = () => {
   return bcrypt
@@ -12,6 +13,12 @@ exports.execute = () => {
           lastName: 'lastName1',
           email: 'email1@wolox.com.ar',
           password: hash
+        }).then(user => {
+          return Album.create({
+            userId: user.id,
+            externalId: 1,
+            title: 'quidem molestiae enim'
+          });
         })
       );
       data.push(

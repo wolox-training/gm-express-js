@@ -11,6 +11,8 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.removeColumn('users', 'role');
+    return queryInterface
+      .removeColumn('users', 'role')
+      .then(() => queryInterface.sequelize.query('DROP TYPE "enum_users_role";'));
   }
 };
