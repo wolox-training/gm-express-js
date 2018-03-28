@@ -1,5 +1,6 @@
 const usersController = require('./controllers/users_controller'),
   albumsController = require('./controllers/albums_controller'),
+  photosController = require('./controllers/photos_controller'),
   auth = require('./middlewares/auth'),
   userValidation = require('./middlewares/users_validations'),
   albumValidation = require('./middlewares/albums_validations');
@@ -18,5 +19,14 @@ exports.init = app => {
     auth.sameAsLogged,
     albumValidation.validateAlbum,
     albumsController.create
+  );
+
+  // Photos
+  app.get(
+    '/users/albums/:id/photos',
+    auth.secure,
+    albumValidation.validateId,
+    albumValidation.boughtByUser,
+    photosController.getPhotosAlbum
   );
 };
