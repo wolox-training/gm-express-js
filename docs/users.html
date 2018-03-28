@@ -1,4 +1,16 @@
-<html><head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /><script src="https://code.jquery.com/jquery-1.12.2.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script><style> pre { width: 95%; } </style></head><body><div class="container"><div class="jumbotron"><h1>Users</h1></div><div class="panel panel-default"><div class="panel-heading" role="tab" id="heading-users-GET"><h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-users-GET" href="#collapse-users-GET">GET /users?page=1</a></h4></div><div id="collapse-users-GET" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-users-GET"><div class="panel-body"><h4>Request Data</h4><div class="container"><h5>Headers</h5><pre>{
+<html><head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /><script src="https://code.jquery.com/jquery-1.12.2.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script><style> pre { width: 95%; } </style></head><body><div class="container"><div class="jumbotron"><h1>Users</h1></div><div class="panel panel-default"><div class="panel-heading" role="tab" id="heading-users-1-albums-POST"><h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-users-1-albums-POST" href="#collapse-users-1-albums-POST">POST /users/1/albums</a></h4></div><div id="collapse-users-1-albums-POST" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-users-1-albums-POST"><div class="panel-body"><h4>Request Data</h4><div class="container"><h5>Headers</h5><pre>{
+  "content-type": "application/json",
+  "authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsMUB3b2xveC5jb20uYXIifQ.VVgja5eSTIKEWyabmfZkXOzE8zsqS34ktXW2p6nadek",
+  "content-length": 16
+}</pre><h5>Body</h5><pre>{
+  "externalId": 2
+}</pre></div></div><div class="panel-body"><h4>Response Data</h4><div class="container"><h5>Status: 200</h5><h5>Headers</h5><pre>{
+  "content-type": "application/json",
+  "authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsMUB3b2xveC5jb20uYXIifQ.VVgja5eSTIKEWyabmfZkXOzE8zsqS34ktXW2p6nadek",
+  "content-length": 16
+}</pre><h5>Body</h5><pre>{
+  "boughtAlbum": "User, with ID 1, just bought quidem molestiae enim"
+}</pre></div></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab" id="heading-users-GET"><h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-users-GET" href="#collapse-users-GET">GET /users?page=1</a></h4></div><div id="collapse-users-GET" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-users-GET"><div class="panel-body"><h4>Request Data</h4><div class="container"><h5>Headers</h5><pre>{
   "authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsMUB3b2xveC5jb20uYXIifQ.VVgja5eSTIKEWyabmfZkXOzE8zsqS34ktXW2p6nadek"
 }</pre></div></div><div class="panel-body"><h4>Response Data</h4><div class="container"><h5>Status: 200</h5><h5>Headers</h5><pre>{
   "authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsMUB3b2xveC5jb20uYXIifQ.VVgja5eSTIKEWyabmfZkXOzE8zsqS34ktXW2p6nadek"
@@ -9,8 +21,8 @@
     "lastName": "lastName1",
     "email": "email1@wolox.com.ar",
     "role": "regular",
-    "createdAt": "2018-03-26T18:47:23.438Z",
-    "updatedAt": "2018-03-26T18:47:23.438Z"
+    "createdAt": "2018-03-28T13:45:38.856Z",
+    "updatedAt": "2018-03-28T13:45:38.856Z"
   },
   {
     "id": 2,
@@ -18,8 +30,8 @@
     "lastName": "001",
     "email": "admin001@wolox.com.ar",
     "role": "admin",
-    "createdAt": "2018-03-26T18:47:23.438Z",
-    "updatedAt": "2018-03-26T18:47:23.438Z"
+    "createdAt": "2018-03-28T13:45:38.856Z",
+    "updatedAt": "2018-03-28T13:45:38.856Z"
   }
 ]</pre></div></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab" id="heading-users-sessions-POST"><h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-users-sessions-POST" href="#collapse-users-sessions-POST">POST /users/sessions</a></h4></div><div id="collapse-users-sessions-POST" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-users-sessions-POST"><div class="panel-body"><h4>Request Data</h4><div class="container"><h5>Headers</h5><pre>{
   "content-type": "application/json",
