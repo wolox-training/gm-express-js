@@ -10,7 +10,26 @@
   "content-length": 16
 }</pre><h5>Body</h5><pre>{
   "boughtAlbum": "User, with ID 1, just bought quidem molestiae enim"
-}</pre></div></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab" id="heading-users-GET"><h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-users-GET" href="#collapse-users-GET">GET /users?page=1</a></h4></div><div id="collapse-users-GET" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-users-GET"><div class="panel-body"><h4>Request Data</h4><div class="container"><h5>Headers</h5><pre>{
+}</pre></div></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab" id="heading-users-albums-1-photos-GET"><h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-users-albums-1-photos-GET" href="#collapse-users-albums-1-photos-GET">GET /users/albums/1/photos</a></h4></div><div id="collapse-users-albums-1-photos-GET" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-users-albums-1-photos-GET"><div class="panel-body"><h4>Request Data</h4><div class="container"><h5>Headers</h5><pre>{
+  "authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsMUB3b2xveC5jb20uYXIifQ.VVgja5eSTIKEWyabmfZkXOzE8zsqS34ktXW2p6nadek"
+}</pre></div></div><div class="panel-body"><h4>Response Data</h4><div class="container"><h5>Status: 200</h5><h5>Headers</h5><pre>{
+  "authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsMUB3b2xveC5jb20uYXIifQ.VVgja5eSTIKEWyabmfZkXOzE8zsqS34ktXW2p6nadek"
+}</pre><h5>Body</h5><pre>[
+  {
+    "albumId": 1,
+    "id": 4451,
+    "title": "officiis similique eligendi excepturi",
+    "url": "http://placehold.it/600/a335a",
+    "thumbnailUrl": "http://placehold.it/150/a335a"
+  },
+  {
+    "albumId": 1,
+    "id": 4452,
+    "title": "qui quae delectus aut rem",
+    "url": "http://placehold.it/600/947e46",
+    "thumbnailUrl": "http://placehold.it/150/947e46"
+  }
+]</pre></div></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab" id="heading-users-GET"><h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-users-GET" href="#collapse-users-GET">GET /users?page=1</a></h4></div><div id="collapse-users-GET" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-users-GET"><div class="panel-body"><h4>Request Data</h4><div class="container"><h5>Headers</h5><pre>{
   "authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsMUB3b2xveC5jb20uYXIifQ.VVgja5eSTIKEWyabmfZkXOzE8zsqS34ktXW2p6nadek"
 }</pre></div></div><div class="panel-body"><h4>Response Data</h4><div class="container"><h5>Status: 200</h5><h5>Headers</h5><pre>{
   "authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsMUB3b2xveC5jb20uYXIifQ.VVgja5eSTIKEWyabmfZkXOzE8zsqS34ktXW2p6nadek"
@@ -21,8 +40,8 @@
     "lastName": "lastName1",
     "email": "email1@wolox.com.ar",
     "role": "regular",
-    "createdAt": "2018-03-28T13:45:38.856Z",
-    "updatedAt": "2018-03-28T13:45:38.856Z"
+    "createdAt": "2018-03-28T18:30:19.572Z",
+    "updatedAt": "2018-03-28T18:30:19.572Z"
   },
   {
     "id": 2,
@@ -30,8 +49,8 @@
     "lastName": "001",
     "email": "admin001@wolox.com.ar",
     "role": "admin",
-    "createdAt": "2018-03-28T13:45:38.856Z",
-    "updatedAt": "2018-03-28T13:45:38.856Z"
+    "createdAt": "2018-03-28T18:30:19.572Z",
+    "updatedAt": "2018-03-28T18:30:19.572Z"
   }
 ]</pre></div></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab" id="heading-users-sessions-POST"><h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-users-sessions-POST" href="#collapse-users-sessions-POST">POST /users/sessions</a></h4></div><div id="collapse-users-sessions-POST" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-users-sessions-POST"><div class="panel-body"><h4>Request Data</h4><div class="container"><h5>Headers</h5><pre>{
   "content-type": "application/json",
